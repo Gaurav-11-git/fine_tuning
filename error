@@ -1,0 +1,25 @@
+❌ An error occurred: Unrecognized configuration class <class 'transformers.models.gpt2.configuration_gpt2.GPT2Config'> for this kind of AutoModel: AutoModelForSeq2SeqLM.
+Model type should be one of AudioFlamingo3Config, BartConfig, BigBirdPegasusConfig, BlenderbotConfig, BlenderbotSmallConfig, EncoderDecoderConfig, FSMTConfig, GlmAsrConfig, GraniteSpeechConfig, LEDConfig, LongT5Config, M2M100Config, MarianConfig, MBartConfig, MT5Config, MvpConfig, NllbMoeConfig, PegasusConfig, PegasusXConfig, PLBartConfig, ProphetNetConfig, Qwen2AudioConfig, SeamlessM4TConfig, SeamlessM4Tv2Config, SwitchTransformersConfig, T5Config, T5GemmaConfig, T5Gemma2Config, UMT5Config, VoxtralConfig.
+Traceback (most recent call last):
+  File "C:\Users\gashokpa\OneDrive - Capgemini\Desktop\Batch_processing\autotrain\main.py", line 69, in main
+    trainer = TrainerFactory.create(config)
+  File "C:\Users\gashokpa\OneDrive - Capgemini\Desktop\Batch_processing\autotrain\models\factory.py", line 20, in create
+    return trainer_cls(config)
+  File "C:\Users\gashokpa\OneDrive - Capgemini\Desktop\Batch_processing\autotrain\core\trainer.py", line 36, in __init__
+    self.model = self._load_model()
+                 ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\gashokpa\OneDrive - Capgemini\Desktop\Batch_processing\autotrain\models\flant5.py", line 11, in _load_model
+    return AutoModelForSeq2SeqLM.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.config.model_path,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+        local_files_only=True
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\gashokpa\OneDrive - Capgemini\Desktop\Batch_processing\venv\Lib\site-packages\transformers\models\auto\auto_factory.py", line 377, in from_pretrained
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Unrecognized configuration class <class 'transformers.models.gpt2.configuration_gpt2.GPT2Config'> for this kind of AutoModel: AutoModelForSeq2SeqLM.
+Model type should be one of AudioFlamingo3Config, BartConfig, BigBirdPegasusConfig, BlenderbotConfig, BlenderbotSmallConfig, EncoderDecoderConfig, FSMTConfig, GlmAsrConfig, GraniteSpeechConfig, LEDConfig, LongT5Config, M2M100Config, MarianConfig, MBartConfig, MT5Config, MvpConfig, NllbMoeConfig, PegasusConfig, PegasusXConfig, PLBartConfig, ProphetNetConfig, Qwen2AudioConfig, SeamlessM4TConfig, SeamlessM4Tv2Config, SwitchTransformersConfig, T5Config, T5GemmaConfig, T5Gemma2Config, UMT5Config, VoxtralConfig.
